@@ -11,7 +11,11 @@ export const onCreateUser = functions.auth.user().onCreate(async user => {
   const newUser: User = {
     name: user.displayName,
     email: user.email,
-    balance: 0
+    balance: 0,
+    preferences: {
+      language: 'en',
+      theme: 'dark'
+    }
   }
 
   try {
